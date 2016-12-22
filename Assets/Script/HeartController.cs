@@ -10,15 +10,33 @@ public class HeartController : MonoBehaviour {
 
     private Vector2 m_pos;
 
+    private GameObject hGameObject;
+
     // Use this for initialization
     void Start () {
-        m_pos = transform.localPosition;
+        hGameObject = GameObject.Find("Heart");
 
+        rb = GetComponent<Rigidbody2D>();
+
+        m_pos = transform.localPosition;
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         transform.localPosition = m_pos;
         m_pos.y += upSpeed;
+
+        StartCoroutine("heartMove");
+    }
+
+    private IEnumerator heartMove()
+    {
+        while (true)
+        {
+            m_pos.x += upSpeed * 2;
+            yield return new WaitForSeconds(2.0f);
+            m_pos.x -= upSpeed * 2;
+            yield return new WaitForSeconds(2.0f);
+        }
     }
 }
