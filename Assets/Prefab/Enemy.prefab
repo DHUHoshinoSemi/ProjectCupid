@@ -132,8 +132,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6112b2588b176204e8eb854a4d105ed2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  Heart: {fileID: 1893666306389494, guid: f009c8d6018502f42b6edc39fd28b9f8, type: 2}
+  moveSpeed: 1
+  Heart: {fileID: 1473947745929660, guid: 4009a638d64034d4eab39f6ce923a2ba, type: 2}
 --- !u!212 &212196451190191388
 SpriteRenderer:
   m_ObjectHideFlags: 1

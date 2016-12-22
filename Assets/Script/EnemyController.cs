@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     float y = -4;
     int x = 0;
-    int HeartRandom = Random.Range(2, 6);
+    int HeartRandom = Random.Range(1, 6);
     int i = 0;
 
     GameObject Enemy;
@@ -29,7 +29,7 @@ public class EnemyController : MonoBehaviour
 
         time = time + Time.deltaTime;
         if (x < 1){
-            if (time >= 0.1f)
+            if (time >= 2.0f)
             {
                 StartCoroutine("heartAppear");
                 x++;
