@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 335590040}
   - component: {fileID: 335590039}
   - component: {fileID: 335590038}
+  - component: {fileID: 335590043}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -188,6 +189,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &335590043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 335590037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce9b2336056f9f44af4ab3b936b1f1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &502844066
 GameObject:
   m_ObjectHideFlags: 0
