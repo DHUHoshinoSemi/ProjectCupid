@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 
     float y = -4;
     int x = 0;
-    int HeartRandom = Random.Range(1, 6);
+    int HeartRandom;
     int i = 0;
 
     GameObject Enemy;
@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        HeartRandom = Random.Range(1, 6);
         Debug.Log(HeartRandom);
     }
 
