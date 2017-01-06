@@ -5,11 +5,15 @@ using UnityEngine;
 public class HeartController : MonoBehaviour
 {
 
-    Rigidbody2D rb;
+    //Rigidbody2D rb;
 
     public float upSpeed = 0;
     public GameObject heartRed;
     public GameObject heartYellow;
+    public int Hp;
+    public float life = 1.0f;
+    public double disappearPoint = 7.3;
+
 
     private Vector2 m_pos;
 
@@ -18,10 +22,11 @@ public class HeartController : MonoBehaviour
     void Start()
     {
 
-        rb = GetComponent<Rigidbody2D>();
+        //rb = GetComponent<Rigidbody2D>();
 
         m_pos = transform.localPosition;
         heartRed.SetActive(true);
+        heartYellow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,10 +34,11 @@ public class HeartController : MonoBehaviour
     {
         transform.localPosition = m_pos;
         m_pos.y += upSpeed;
+        life -= Time.deltaTime;
 
         StartCoroutine("heartMove");
 
-        if (m_pos.y >= 7.3)
+        if (m_pos.y >= disappearPoint)
         {
             Destroy(this.gameObject);
         }
@@ -57,6 +63,14 @@ public class HeartController : MonoBehaviour
             Debug.Log("hit Arrow");
             heartRed.SetActive(false);
             heartYellow.SetActive(true);
+            if (heartYellow == true)
+            {
+                life = 0.2f;
+                if (life < 0)
+                {
+                    Destroy(this.gameObject);
+                }
+            }
         }
     }
 }

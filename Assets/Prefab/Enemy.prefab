@@ -133,7 +133,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1
+  HeartRandom: 0
   Heart: {fileID: 1473947745929660, guid: 4009a638d64034d4eab39f6ce923a2ba, type: 2}
+  boy: {fileID: 1372769986911098}
+  girl: {fileID: 1983150197292010}
 --- !u!212 &212196451190191388
 SpriteRenderer:
   m_ObjectHideFlags: 1
