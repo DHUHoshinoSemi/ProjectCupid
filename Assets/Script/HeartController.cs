@@ -10,7 +10,7 @@ public class HeartController : MonoBehaviour
     public float upSpeed = 0;
     public GameObject heartRed;
     public GameObject heartYellow;
-    public int Hp;
+    public int Hp = 0;
     public float life = 1.0f;
     public double disappearPoint = 7.3;
 
@@ -60,17 +60,11 @@ public class HeartController : MonoBehaviour
         
         if (collision.gameObject.tag == "Arrow")
         {
+            //Hp -= 1;
             Debug.Log("hit Arrow");
+            Debug.Log(Hp);
             heartRed.SetActive(false);
             heartYellow.SetActive(true);
-            if (heartYellow == true)
-            {
-                life = 0.2f;
-                if (life < 0)
-                {
-                    Destroy(this.gameObject);
-                }
-            }
         }
     }
 }

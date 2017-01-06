@@ -13,9 +13,6 @@ public class EnemyController : MonoBehaviour
     public GameObject boy;
     public GameObject girl;
     public GameObject Bomb;
-    public float bombLife = 0.5f;
-
-
 
     int y = -4;
     int x = 0;
@@ -23,7 +20,7 @@ public class EnemyController : MonoBehaviour
     GameObject Enemy;
     HeartController heartController;
 
-    int bomb = 0;
+    int bomb = 1;
 
     // Use this for initialization
     void Start()
@@ -40,9 +37,8 @@ public class EnemyController : MonoBehaviour
     {
         Vector2 v = new Vector2(transform.position.x - moveSpeed * Time.deltaTime, transform.position.y);
         transform.position = v;
-        bombLife -= Time.deltaTime;
 
-
+        time = time + Time.deltaTime;
         if (x < 1){
             if (time >= 2.0f)
             {
@@ -50,16 +46,16 @@ public class EnemyController : MonoBehaviour
                 x++;
             }
         }
-        if (bomb == 0)
+       /* if (bomb == 0)
         {
             Enemy = GameObject.Find("Enemy");
             Vector2 pos = new Vector2(gameObject.transform.position.x, gameObject.transform.position.y + 2);
             Heart = (GameObject)Instantiate(Bomb, transform.position, Quaternion.identity);
             Heart.transform.parent = Enemy.transform;
             Destroy(this.gameObject);
-            boy.transform.position += new Vector3(- bombSpeed_x, bombSpeed_y);
+            boy.transform.position += new Vector3(-bombSpeed_x, bombSpeed_y);
             girl.transform.position += new Vector3(bombSpeed_x, bombSpeed_y);
-        }
+        }*/
     }
 
     private IEnumerator heartAppear()
@@ -70,7 +66,7 @@ public class EnemyController : MonoBehaviour
             for (i = 0; i < HeartRandom; i++)
             {
                 float waitTime = Random.Range(1.5f, 3.0f);
-                // Debug.Log(waitTime);
+                Debug.Log(waitTime);
                 Heart = (GameObject)Instantiate(Heart, transform.position, Quaternion.identity);
                 Heart.transform.parent = Enemy.transform;
                 yield return new WaitForSeconds(waitTime);
